@@ -6,7 +6,7 @@ Preact is significantly smaller (only 3.5kb gzipped) and faster than React and R
 
 ### Functional Components and Hooks
 
-Preact uses the same React Hooks API, enabling simpler functional components and fewer (hopefully none) higher order components. JavaScript was never build for classes and thus JS classes leave alot to be desired. Class methods do not minify well and can lead to larger network payloads. "this" can lead to bugs and confusion as "this" in JavaScript often carries a different meaning vs other languages.
+Preact uses the same React Hooks API, enabling simpler functional components and fewer (hopefully none) higher order components. JavaScript was never build for classes and thus JS classes leave alot to be desired. Class methods do not minify well and can lead to larger network payloads. "this" can lead to bugs and confusion as "this" in JavaScript often carries a different meaning vs other languages. JavaScript had first-class functions when many other langauges did not. Functions are easier to test. React also prefers a Functional Programming style in general, so this fits more cohesively.
 
 ### TypeScript
 
@@ -18,9 +18,12 @@ Rollup's API is significantly easier to understand than Webpack's and is better 
 
 ## TODOS:
 
-- Add a linter (ESlint with relevant plugins)
-- Add automatic rollup build process that treats each folder as a component to be build and each index.tsx file as that component's manifest.
-- Add pre-commit hooks (Husky) to lint and fix before committing
+- Add a linter (ESlint with relevant plugins, add more specific rules)
+- Add automatic rollup build process that treats each folder as a component to be built and each index.tsx file as that component's main.
+- Add pre-commit hooks (Husky) to lint and fix before committing, block commits if they fail
 - Add a simple server and watch process for local development
 - Look more into alternative CSS in JS libraries and their pros/cons (Emotion, Styled Components. But maybe also, don't and keep it simple)
 - Emit type declarations and source maps in builds
+- Component playground
+- VSCode settings/recommended extensions
+- Add prettier infused with ESLint

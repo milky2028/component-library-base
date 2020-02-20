@@ -18,7 +18,7 @@ Rollup's API is significantly easier to understand than Webpack's and is better 
 
 ## TODOS:
 
-- Add a linter (ESlint with relevant plugins, add more specific rules)
+- Add a linter (ESlint with relevant plugins, add more specific rules, add npm script for linting)
 - Add automatic rollup build process that treats each folder as a component to be built and each index.tsx file as that component's main.
 - Add pre-commit hooks (Husky) to lint and fix before committing, block commits if they fail
 - Add a simple server and watch process for local development
@@ -27,3 +27,4 @@ Rollup's API is significantly easier to understand than Webpack's and is better 
 - Component playground
 - VSCode settings/recommended extensions
 - Add prettier infused with ESLint
+- Add testing framework (Jest)

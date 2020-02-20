@@ -1,3 +1,5 @@
+import { h } from 'preact';
+
 export default function AvHeader(content: string) {
   const styles = {
     header: {

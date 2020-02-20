@@ -32,7 +32,12 @@ const plugins = [
   babel({
     extensions,
     presets: [['@babel/preset-env', { targets: '> 1%, not dead' }]],
-    plugins: [['@babel/plugin-transform-react-jsx', { pragma: 'h', pragmaFrag: 'Fragment' }]],
+    plugins: [
+      [
+        '@babel/plugin-transform-react-jsx',
+        { pragma: 'h', pragmaFrag: 'Fragment' }
+      ]
+    ],
     runtimeHelpers: true,
     exclude: ['node_modules/**']
   }),

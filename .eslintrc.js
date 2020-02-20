@@ -3,7 +3,11 @@ module.exports = {
     browser: true,
     es6: true
   },
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/eslint-recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/eslint-recommended'
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
@@ -16,8 +20,9 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module'
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
+    'react/react-in-jsx-scope': 'off',
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],

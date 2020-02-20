@@ -1,12 +1,16 @@
 module.exports = {
   env: {
     browser: true,
+    jasmine: true,
+    jest: true,
     es6: true
   },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/eslint-recommended'
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended'
   ],
   globals: {
     Atomics: 'readonly',
@@ -20,8 +24,14 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module'
   },
-  plugins: ['react', '@typescript-eslint'],
+  settings: {
+    react: {
+      pragma: 'h'
+    }
+  },
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
+    '@typescript-eslint/explicit-function-return-type': 'off',
     'prefer-const': 'error',
     'react/react-in-jsx-scope': 'off',
     indent: ['error', 2],

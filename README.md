@@ -14,11 +14,12 @@ TypeScript is not a a silver bullet. It will not prevent all type errors and its
 
 ### Rollup
 
-Use Rollup instead of Webpack. Rollup's API is significantly easier to understand than Webpack's and is better for libraries (it's also faster). A plugin that's thousands of lines in Webpack, might only be 50 in Rollup, making your own build process easily extendible and hackable. Most well-known libraries already use Rollup to distribute their builds, including Angular, Vue, and more. Rollup watch can be combined with a simple server to enable hot reload.
+Rollup's API is significantly easier to understand than Webpack's and is better for libraries (it's also faster). A plugin that's thousands of lines in Webpack, might only be 50 in Rollup, making your own build process easily extendible and hackable. Most well-known libraries already use Rollup to distribute their builds, including Angular, Vue, and more. Rollup watch can be combined with a simple server to enable hot reload.
 
 ## TODOS:
 
 - Add a linter (ESlint with relevant plugins)
+- Add automatic rollup build process that treats each folder as a component to be build and each index.tsx file as that component's manifest.
 - Add pre-commit hooks (Husky) to lint and fix before committing
 - Add a simple server and watch process for local development
 - Look more into alternative CSS in JS libraries and their pros/cons (Emotion, Styled Components. But maybe also, don't and keep it simple)

@@ -8,7 +8,7 @@ import { terser } from 'rollup-plugin-terser';
 function output(name) {
   return {
     dir: 'dist',
-    format: 'iife',
+    format: 'cjs',
     entryFileNames: '[name]-[hash].js',
     name,
     globals: {
@@ -47,7 +47,7 @@ rimraf.sync('dist');
 export default [
   {
     external,
-    input: input('av-header', 'src/index.tsx'),
+    input: input('AvHeader', 'src/AvHeader/index.tsx'),
     output: output('AvHeader'),
     plugins
   }

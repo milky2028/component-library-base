@@ -26,7 +26,8 @@ module.exports = {
   },
   settings: {
     react: {
-      pragma: 'h'
+      pragma: 'h',
+      version: '16.8.0'
     }
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],

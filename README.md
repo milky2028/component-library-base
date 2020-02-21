@@ -2,19 +2,25 @@
 
 ### Preact
 
-Preact is significantly smaller (only 3.5kb gzipped) and faster than React and React DOM and uses the same API. It's well supported, and reduces the network burden on targets ingesting the component library.
+Preact is smaller (only 3.5kb gzipped) and faster than React and React DOM and uses the same API. It's well supported and reduces the network burden on targets ingesting the component library.
+
+Preact is treated as an external/peer dependency and is not compiled with this project, expecting the parent project to be the one to include it.
 
 ### Functional Components and Hooks
 
-Preact uses the same React Hooks API, enabling simpler functional components and fewer (hopefully none) higher order components. JavaScript was never build for classes and thus JS classes leave alot to be desired. Class methods do not minify well and can lead to larger network payloads. "this" can lead to bugs and confusion as "this" in JavaScript often carries a different meaning vs other languages. JavaScript had first-class functions when many other langauges did not. Functions are easier to test. React also prefers a Functional Programming style in general, so this fits more cohesively.
+Preact contains the same React Hooks API, enabling simpler functional components and fewer (hopefully zero) higher order components.
+
+JavaScript was never built for classes and thus JS classes leave alot to be desired. Class methods do not minify well and can lead to larger network payloads. "this" can lead to bugs and confusion as "this" in JavaScript often carries a different meaning than it does in other languages.
+
+JavaScript had first-class functions when many other langauges did not. Functions are easier to test. React also prefers a Functional Programming style in general, so functional components fit more cohesively into a React/Preact project.
 
 ### TypeScript
 
-TypeScript is not a a silver bullet. It will not prevent all type errors and its securities are easy to get around (via "as", "any", and "tsignore"). It is, however, a fantastic code communication tool between developers and especially for libraries, reducing the amount of time you have to Google reference implementations and keeping you in your editor writing code.
+TypeScript is not a a silver bullet. It will not prevent all type errors and its securities are easy to get around (via "as", "any", and "tsignore"). It is, however, a fantastic code communication tool between developers and especially for libraries. TypeScript can significantly reduce the amount of time you spend Googling reference implementations, keeping you in your editor and writing code.
 
 ### Rollup
 
-Rollup's API is significantly easier to understand than Webpack's and is better for libraries (it's also faster). A plugin that's thousands of lines in Webpack, might only be 50 in Rollup, making your own build process easily extendible and hackable. Most well-known libraries already use Rollup to distribute their builds, including Angular, Vue, and more. Rollup watch can be combined with a simple server to enable hot reload.
+Rollup's API is easier to understand than Webpack's and is better for libraries (it's also faster). A plugin that's thousands of lines in Webpack, might only be 50 in Rollup. This makes your own build process easily extendible and hackable. Most well-known libraries already use Rollup to distribute their builds, including Angular, Vue, and more. Rollup watch can be combined with a simple server to enable hot reload.
 
 ## TODOS:
 
@@ -26,5 +32,5 @@ Rollup's API is significantly easier to understand than Webpack's and is better 
 - Emit type declarations and source maps in builds
 - Component playground
 - VSCode settings/recommended extensions
-- Add prettier infused with ESLint
+- ~~Add prettier infused with ESLint~~
 - Add testing framework (Jest)

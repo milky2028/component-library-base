@@ -15,15 +15,24 @@ const plugins = [
   typescript(),
   babel({
     extensions,
-    presets: [['@babel/preset-env', { targets: '> 1%, not dead' }]],
+    exclude: ['node_modules/**'],
+    presets: [
+      [
+        '@babel/preset-env',
+        {
+          corejs: '3',
+          useBuiltIns: 'usage',
+          targets: '> 1%, not dead'
+        }
+      ]
+    ],
     plugins: [
       [
         '@babel/plugin-transform-react-jsx',
         { pragma: 'h', pragmaFrag: 'Fragment' }
       ]
     ],
-    runtimeHelpers: true,
-    exclude: ['node_modules/**']
+    runtimeHelpers: true
   }),
   terser({
     output: {

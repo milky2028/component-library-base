@@ -4,27 +4,11 @@ import typescript from '@rollup/plugin-typescript';
 import babel from 'rollup-plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
+import { readdirSync } from 'fs';
 
-function output(name) {
-  return {
-    dir: 'dist',
-    format: 'cjs',
-    entryFileNames: '[name]-[hash].js',
-    name,
-    globals: {
-      preact: 'preact'
-    }
-  };
-}
+rimraf.sync('dist');
 
-function input(name, path) {
-  return {
-    [name]: path
-  };
-}
-
-const extensions = ['.js', '.jsx', '.ts', '.tsx'];
-const external = ['preact'];
+const extensions = ['.ts', '.tsx'];
 const plugins = [
   resolve({ extensions }),
   commonjs(),
@@ -48,12 +32,20 @@ const plugins = [
   })
 ];
 
-rimraf.sync('dist');
-export default [
-  {
-    external,
-    input: input('AvHeader', 'src/AvHeader/index.tsx'),
-    output: output('AvHeader'),
+const components = readdirSync('src').map((componentFolder) => {
+  return {
+    external: ['preact'],
+    input: {
+      [componentFolder]: `src/${componentFolder}/index.tsx`
+    },
+    output: {
+      dir: 'dist',
+      format: 'cjs',
+      entryFileNames: '[name]-[hash].js',
+      name: componentFolder
+    },
     plugins
-  }
-];
+  };
+});
+
+export default components;

@@ -25,11 +25,10 @@ Rollup's API is easier to understand than Webpack's and is better for libraries 
 ## TODOS:
 
 - ~~Add a linter (ESlint with relevant plugins, add more specific rules, add npm script for linting)~~
-- Add automatic rollup build process that treats each folder as a component to be built and each index.tsx file as that component's main.
+- ~~Add automatic rollup build process that treats each folder as a component to be built and each index.tsx file as that component's main.~~
 - Add pre-commit hooks (Husky) to lint and fix before committing, block commits if they fail
 - Add a simple server and watch process for local development
-- Look more into alternative CSS in JS libraries and their pros/cons (Emotion, Styled Components. But maybe also, don't and keep it simple)
-- Emit type declarations and source maps in builds
+- Emit type declarations and source maps in builds (this is a weird one, the current Rollup TS build does not support emitting type declarations)
 - Component playground
 - VSCode settings/recommended extensions
 - ~~Add prettier infused with ESLint~~
